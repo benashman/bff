@@ -1,9 +1,9 @@
 %form{:id => "query-form", :method => "post", :action => "/"}
-  %fieldset
-    %label{:for => "user_a"} User A:
-    %input{:type => "text", :id => "user_a", :name => "user_a", :placeholder => "@user_a"}
-    %label{:for => "user_b"} User B:
-    %input{:type => "text", :id => "user_b", :name => "user_b", :placeholder => "@user_b"}
-  %fieldset
-    %input{:type => "submit", :id => "query-form-submit"}
-
+  .query
+    %span Does
+    %input{:type => "text", :id => "user_a", :name => "user_a", :placeholder => "@username", :size => "10"}
+    %span follow
+    %input{:type => "text", :id => "user_b", :name => "user_b", :placeholder => "@username", :size => "10"}
+    %span ?
+    %input{:type => "submit", :id => "query-form-submit", :value => "Find out"}
+  .verdict

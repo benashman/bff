@@ -1,0 +1,82 @@
+// font-size inc. rems
+@mixin font-size($sizeValue: 1.6){
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+// retinafy background-images
+@mixin retinafy($file, $type, $width, $height) {
+  background-image: url("../img/" + $file + '.' + $type);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+    & {
+      background-image: url("../img/" + $file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+    }
+  }
+}
+
+// Prefix experimental props w/ browser prefixes
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    }
+    @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    }
+    @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    }
+    @else if $prefix == o {
+      -o-#{$property}: $value;
+    }
+    @else if $prefix == spec {
+      #{$property}: $value;
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// transitions
+@mixin transition ($properties...) {
+  @if length($properties) >= 1 {
+    @include prefixer(transition, $properties, webkit moz ms o spec);
+  }
+
+  @else {
+    $properties: all 0.15s ease-out 0;
+    @include prefixer(transition, $properties, webkit moz ms o spec);
+  }
+}
+
+// Featured project images
+$project-list: pique, flask, dat, datdegreeshow;
+
+@mixin featured-image {
+  @each $project in $project-list {
+    &.#{$project} {
+      background-image: url("../img/#{$project}_featured.jpg");
+
+      @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+        & {
+          background-image: url("../img/#{$project}_featured@2x.jpg");
+        }
+      }
+    }
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (max-width: 1250px) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 720px)  { @content; }
+  }
+}

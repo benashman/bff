@@ -1,0 +1,97 @@
+// Grid setup
+@import "susy";
+
+$total-columns: 12;
+$column-width: 50px;
+$gutter-width: 30px;
+$grid-padding: $gutter-width;
+
+// Dependencies
+@import "util/reset";
+@import "util/mixin";
+@import "util/color";
+@import "util/type";
+
+// Move later
+@import "util/scratch";
+
+// Clearfix
+%cf:before,
+%cf:after {
+    content: " ";
+    display: table;
+}
+
+%cf:after { clear: both; }
+%cf { *zoom: 1; }
+
+// Document
+* {
+    @include prefixer(box-sizing, border-box, webkit moz o spec);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+html {}
+html, body {
+    font-family: $header-font;
+    background: $background;
+    color: white;
+}
+
+.wrap {
+}
+
+// Global Header
+@import "parts/header";
+
+main {
+    display: block;
+}
+
+// Main
+.main {
+    @include container;
+
+    .query {
+        @include span-columns(12 omega, 12);
+        @include font-size(2);
+
+        input[type="text"] {
+            @include font-size(2);
+            font-family: $header-font;
+            font-weight: 400;
+            text-align: center;
+            background: transparent;
+            color: #FFFFFF;
+            border: none;
+            outline: 0;
+            padding: 0 0 5px 0;
+            //border-bottom: 2px solid darken($background, 10%);
+            margin-bottom: 60px;
+        }
+
+        input[type="submit"] {
+            @include font-size(1.4);
+            font-family: $header-font;
+            background: $highlight;
+            color: #FFFFFF;
+            padding: 10px 15px;
+            border: none;
+            margin-left: 20px;
+            border-radius: 2px;
+        }
+    }
+
+    .verdict {
+        @include span-columns(12 omega, 12);
+        background: #FFFFFF;
+        height: 100px;
+    }
+}
+
+
+
+
+
+
+

@@ -1,5 +1,273 @@
-.dropzone {
-    height: 200px;
-    width: 200px;
-    background: red;
+@charset "UTF-8";
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+/* line 3, ../sass/util/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 10, ../sass/util/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 12, ../sass/util/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 14, ../sass/util/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 16, ../sass/util/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 19, ../sass/util/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 22, ../sass/util/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* #Basic Styles
+================================================== */
+/* line 29, ../sass/util/_reset.scss */
+body {
+  background: #fff;
+  font: 14px/1.6 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* #Typography
+================================================== */
+/* line 40, ../sass/util/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-weight: bold;
+}
+
+/* line 45, ../sass/util/_reset.scss */
+h1 {
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+/* line 46, ../sass/util/_reset.scss */
+h2 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+/* line 47, ../sass/util/_reset.scss */
+h3 {
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+/* line 48, ../sass/util/_reset.scss */
+h4 {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+/* line 49, ../sass/util/_reset.scss */
+h5 {
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+/* line 50, ../sass/util/_reset.scss */
+h6 {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* line 52, ../sass/util/_reset.scss */
+p {
+  margin: 0 0 20px 0;
+}
+
+/* line 53, ../sass/util/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 54, ../sass/util/_reset.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 55, ../sass/util/_reset.scss */
+hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0 30px;
+  height: 0;
+}
+
+/* #Links
+================================================== */
+/* line 60, ../sass/util/_reset.scss */
+a {
+  color: #333;
+  text-decoration: underline;
+  outline: 0;
+}
+
+/* line 61, ../sass/util/_reset.scss */
+a:hover, a:focus {
+  color: #000;
+}
+
+/* line 29, ../sass/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 35, ../sass/main.scss */
+html, body {
+  font-family: "freight-sans-pro";
+  background: #223549;
+  color: white;
+}
+
+/* line 1, ../sass/parts/_header.scss */
+.site-header {
+  *zoom: 1;
+  max-width: 930px;
+  _width: 930px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 120px 30px 60px 30px;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.site-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 5, ../sass/parts/_header.scss */
+.site-header .logo {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -30px;
+  display: inline;
+}
+/* line 8, ../sass/parts/_header.scss */
+.site-header .logo h1 {
+  font-size: 19px;
+  font-size: 1.9rem;
+  display: inline-block;
+  background: #FFFFFF;
+  color: #223549;
+  font-family: "freight-sans-pro";
+  letter-spacing: 10px;
+  padding: 10px 9px 10px 15px;
+  border-radius: 2px;
+}
+/* line 17, ../sass/parts/_header.scss */
+.site-header .logo h1:after {
+  font-size: 15px;
+  font-size: 1.5rem;
+  content: "♥";
+  color: #5cbd98;
+}
+/* line 24, ../sass/parts/_header.scss */
+.site-header .logo h1:hover:after {
+  color: #d25251;
+}
+
+/* line 47, ../sass/main.scss */
+main {
+  display: block;
+}
+
+/* line 52, ../sass/main.scss */
+.main {
+  *zoom: 1;
+  max-width: 930px;
+  _width: 930px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 55, ../sass/main.scss */
+.main .query {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -30px;
+  display: inline;
+  font-size: 20px;
+  font-size: 2rem;
+}
+/* line 59, ../sass/main.scss */
+.main .query input[type="text"] {
+  font-size: 20px;
+  font-size: 2rem;
+  font-family: "freight-sans-pro";
+  font-weight: 400;
+  text-align: center;
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  outline: 0;
+  padding: 0 0 5px 0;
+  margin-bottom: 60px;
+}
+/* line 73, ../sass/main.scss */
+.main .query input[type="submit"] {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "freight-sans-pro";
+  background: #5cbd98;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  margin-left: 20px;
+  border-radius: 2px;
+}
+/* line 85, ../sass/main.scss */
+.main .verdict {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -30px;
+  display: inline;
+  background: #FFFFFF;
+  height: 100px;
 }

@@ -2,14 +2,20 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-    %title Fwiends
+    %title BFF
     %meta{:name => "description", :content => ""}
     %meta{:name => "author", :content => "Ben Ashman"}
     %link{:rel => "stylesheet", :href => "/css/main.css"}
+    %script{:src => "//use.typekit.net/qth4gbd.js"}
+    :javascript
+      try {Typekit.load();}catch(e){}
   %body
     %header{:class => "site-header", :role => "banner"}
-      %h1 Fwiends
+      .logo
+        %h1 BFF
     %main{:class => "main", :id => "main", :role => "main"}
       =yield
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+    %script{:src => "js/main.js"}
     %footer{:class => "site-footer", :role => "contentinfo"}
 
