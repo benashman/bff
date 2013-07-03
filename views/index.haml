@@ -1,0 +1,9 @@
+%form{:id => "query-form", :method => "post", :action => "/"}
+  %fieldset
+    %label{:for => "user_a"} User A:
+    %input{:type => "text", :id => "user_a", :name => "user_a", :placeholder => "@user_a"}
+    %label{:for => "user_b"} User B:
+    %input{:type => "text", :id => "user_b", :name => "user_b", :placeholder => "@user_b"}
+  %fieldset
+    %input{:type => "submit", :id => "query-form-submit"}
+
