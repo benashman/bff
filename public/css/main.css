@@ -253,7 +253,7 @@ html, body {
   content: "♥";
   left: -5px;
   font-style: normal;
-  color: #5cbd98;
+  color: #00a2bf;
 }
 /* line 30, ../sass/parts/_header.scss */
 .site-header .header-inner .logo h1:hover:after {
@@ -387,7 +387,7 @@ main {
   display: inline-block;
   padding: 10px 30px;
   color: white;
-  background: #00acee;
+  background: #00a2bf;
   border-bottom: none;
   border-radius: 4px;
   margin-bottom: 60px;
@@ -433,7 +433,7 @@ main {
   border: none;
   outline: 0;
   background: transparent;
-  color: #00acee;
+  color: #00a2bf;
   padding: 0 0 10px 0;
   border-bottom: 1px solid #f4f4f4;
 }
@@ -454,7 +454,7 @@ main {
   font-size: 1.2rem;
   text-align: center;
   color: white;
-  background: #00acee;
+  background: #00a2bf;
   padding: 10px 0;
   border-bottom: none;
   border-bottom-left-radius: 2px;
@@ -462,7 +462,7 @@ main {
 }
 /* line 188, ../sass/main.scss */
 .twitter-card .profile-link:hover {
-  background: #08bbff;
+  background: #00b8d9;
 }
 
 /* line 194, ../sass/main.scss */
