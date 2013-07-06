@@ -5,17 +5,21 @@
     %title BFF
     %meta{:name => "description", :content => ""}
     %meta{:name => "author", :content => "Ben Ashman"}
+    %meta{:name => "viewport", :content => "width=device-width"}
     %link{:rel => "stylesheet", :href => "/css/main.css"}
     %script{:src => "//use.typekit.net/qth4gbd.js"}
     :javascript
       try {Typekit.load();}catch(e){}
-  %body
-    %header{:class => "site-header", :role => "banner"}
-      .logo
-        %h1 BFF
-    %main{:class => "main", :id => "main", :role => "main"}
-      =yield
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
-    %script{:src => "js/main.js"}
-    %footer{:class => "site-footer", :role => "contentinfo"}
-
+  %body{:class => "#{@relationship_status}"}
+    .wrap
+      %header{:class => "site-header", :role => "banner"}
+        .header-inner
+          .logo
+            %h1
+              %a{:href => "#{base_url}"} bff
+      %main{:class => "main", :id => "main", :role => "main"}
+        =yield
+      %footer{:class => "site-footer", :role => "contentinfo"}
+        <p>A little thing by <a href="http://twitter.com/benashman">@benashman</a></p>
+      %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+      %script{:src => "js/main.js"}

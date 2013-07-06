@@ -1,28 +1,39 @@
 .site-header {
-    @include container;
-    padding: 120px 30px 60px 30px;
+    background: $white;
+    width: 100%;
+    margin-bottom: 60px;
 
-    .logo {
-        @include span-columns(12 omega, 12);
+    .header-inner {
+        @include container;
+        padding: 30px;
 
-        h1 {
-            @include font-size(1.9);
-            display: inline-block;
-            background: #FFFFFF;
-            color: $background;
-            font-family: $header-font;
-            letter-spacing: 10px;
-            padding: 10px 9px 10px 15px;
-            border-radius: 2px;
-            &:after {
-                @include font-size(1.5);
-                content: "♥";
-                color: $highlight;
-            }
+        .logo {
+            @include span-columns(12 omega, 12);
 
-            &:hover {
+            h1 {
+                @include font-size(2.2);
+                text-align: center;
+                color: $background;
+                font-family: $header-font;
+                font-style: italic;
+                letter-spacing: 2px;
                 &:after {
-                    color: #d25251;
+                    @include font-size(.6);
+                    position: relative;
+                    content: "♥";
+                    left: -5px;
+                    font-style: normal;
+                    color: $highlight;
+                }
+
+                &:hover {
+                    &:after {
+                        color: #d25251;
+                    }
+                }
+
+                a {
+                    color: $background;
                 }
             }
         }

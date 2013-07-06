@@ -77,6 +77,6 @@ $project-list: pique, flask, dat, datdegreeshow;
     @media (max-width: 1250px) { @content; }
   }
   @else if $point == baby-bear {
-    @media (max-width: 720px)  { @content; }
+    @media (max-width: 580px)  { @content; }
   }
 }

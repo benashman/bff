@@ -1,7 +1,3 @@
-require 'rubygems'
-require 'sinatra'
-require 'twitter'
-
 #configure twitter
 Twitter.configure do |config|
   config.consumer_key = 'rw5RHxWAeO7O5bZlA46w'

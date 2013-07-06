@@ -1,9 +1,8 @@
-%form{:id => "query-form", :method => "post", :action => "/"}
-  .query
-    %span Does
-    %input{:type => "text", :id => "user_a", :name => "user_a", :placeholder => "@username", :size => "10"}
-    %span follow
-    %input{:type => "text", :id => "user_b", :name => "user_b", :placeholder => "@username", :size => "10"}
-    %span ?
-    %input{:type => "submit", :id => "query-form-submit", :value => "Find out"}
-  .verdict
+%section{:class => "demo"}
+%section{:class => "intro"}
+  %h2 Who's friends with who on Twitter?
+  %p
+    Simply append the URL with the names of the two users you'd like to query and
+    %strong bff
+    will tell you whether they're friends or not.
+  %a{:href => "#{base_url}/@benashman/@jack", :class => "try-button"} Show me how

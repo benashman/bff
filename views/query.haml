@@ -1,4 +1,59 @@
-%p= "User A: #{@user_a.screen_name}"
-%p= "User B: #{@user_b.screen_name}"
+%div{:class => "verdict #{@relationship_status}"}
+  - if @relationship_status
+    %h2{:class => "verdict-header"} Awesome
+    %p{:class => "verdict-details"}
+      = "@#{@user_a.screen_name} follows @#{@user_b.screen_name}."
+  - else
+    %h2{:class => "verdict-header"} Nope
+    %p{:class => "verdict-details"}
+      = "@#{@user_a.screen_name} does not follow @#{@user_b.screen_name}."
+    %p{:class => "suggestion"}
+      Think they'd get on?
+      %a{:href => "https://twitter.com/intent/tweet?screen_name=#{@user_a.screen_name}&text=you%20should%20follow%20@#{@user_b.screen_name}%2C%20they're%20pretty%20cool.", :class => "twitter-mention-button"}
+        Suggest they become friends</a>
+      :javascript
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
-%strong= "Status: #{@relationship_status}"
+
+
+%form{:id => "query-form", :method => "post", :action => "/"}
+  .user-container
+    .twitter-card
+      .avatar
+        %img{:src => formatted_avatar(@user_a)}
+      .details
+        %ul
+          %li{:class => "username"}
+            %input{:type => "text", :id => "user_a", :name => "user_a", :placeholder => "@username", :size => "10", :value => "@#{@user_a.screen_name}"}
+          %li{:class => "irl-name"}
+            - if @user_a.name != ""
+              = @user_a.name
+            - else
+              IRL Name unknown
+          %li{:class => "location"}
+            - if @user_a.location != ""
+              = @user_a.location
+            - else
+              Location unknown
+      %a{:class => "profile-link butt", :href => "http://twitter.com/#{@user_a.screen_name}"} View on Twitter
+  .user-container
+    .twitter-card
+      .avatar
+        %img{:src => formatted_avatar(@user_b)}
+      .details
+        %ul
+          %li{:class => "username"}
+            %input{:type => "text", :id => "user_b", :name => "user_b", :placeholder => "@username", :size => "10", :value => "@#{@user_b.screen_name}"}
+          %li{:class => "irl-name"}
+            - if @user_b.name != ""
+              = @user_b.name
+            - else
+              IRL Name unknown
+          %li{:class => "location"}
+            - if @user_b.location != ""
+              = @user_b.location
+            - else
+              Location unknown
+      %a{:class => "profile-link butt", :href => "http://twitter.com/#{@user_b.screen_name}"} View on Twitter
+  %input{:type => "submit", :id => "query-form-submit", :value => "Find out"}
+  %a{:href => "#{base_url}/#{@user_b.screen_name}/#{@user_a.screen_name}", :class => "reverse-button"}

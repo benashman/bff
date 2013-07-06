@@ -2,7 +2,7 @@
 @import "susy";
 
 $total-columns: 12;
-$column-width: 50px;
+$column-width: 30px;
 $gutter-width: 30px;
 $grid-padding: $gutter-width;
 
@@ -25,6 +25,10 @@ $grid-padding: $gutter-width;
 %cf:after { clear: both; }
 %cf { *zoom: 1; }
 
+.butt {
+    display: block;
+}
+
 // Document
 * {
     @include prefixer(box-sizing, border-box, webkit moz o spec);
@@ -35,16 +39,23 @@ html {}
 html, body {
     font-family: $header-font;
     background: $background;
-    color: white;
+    color: darken($grey, 30%);
+    height: 100%;
+}
+
+.body {
 }
 
 .wrap {
+    min-height: 100%;
 }
 
 // Global Header
 @import "parts/header";
 
 main {
+    @extend %cf;
+    position: relative;
     display: block;
 }
 
@@ -52,46 +63,187 @@ main {
 .main {
     @include container;
 
-    .query {
-        @include span-columns(12 omega, 12);
-        @include font-size(2);
-
-        input[type="text"] {
-            @include font-size(2);
-            font-family: $header-font;
-            font-weight: 400;
-            text-align: center;
-            background: transparent;
-            color: #FFFFFF;
-            border: none;
-            outline: 0;
-            padding: 0 0 5px 0;
-            //border-bottom: 2px solid darken($background, 10%);
-            margin-bottom: 60px;
-        }
-
-        input[type="submit"] {
-            @include font-size(1.4);
-            font-family: $header-font;
-            background: $highlight;
-            color: #FFFFFF;
-            padding: 10px 15px;
-            border: none;
-            margin-left: 20px;
-            border-radius: 2px;
+    .user-container {
+        @include span-columns(6, 12);
+        @include breakpoint(baby-bear) { @include span-columns(12 omega, 12); }
+        margin-bottom: 60px;
+        &:last-of-type {
+            @include span-columns(6 omega, 12);
+            @include breakpoint(baby-bear) { @include span-columns(12 omega, 12); }
         }
     }
 
-    .verdict {
-        @include span-columns(12 omega, 12);
-        background: #FFFFFF;
-        height: 100px;
+    input[type="submit"] {
+        display: none;
     }
 }
 
+// Home
 
+.demo {
+    @include span-columns(12 omega, 12);
+    @include retinafy("demo_url", "png", 630px, 200px);
+    @include breakpoint(baby-bear) { display: none; }
+    background-position: center center;
+    height: 200px;
+}
 
+.intro {
+    @include span-columns(12 omega, 12);
+    text-align: center;
 
+    h2 {
+        @include font-size(2);
+        font-weight: 500;
+        color: $white;
+        margin-bottom: 5px;
+    }
+
+    p {
+        @include font-size(1.1);
+        margin-bottom: 60px;
+        color: #CDCDCD;
+
+        strong {
+            font-style: italic;
+        }
+    }
+
+    .try-button {
+        @include font-size(1.1);
+        display: inline-block;
+        padding: 10px 30px;
+        color: $white;
+        background: $twitter-blue;
+        border-bottom: none;
+        border-radius: 4px;
+        margin-bottom: 60px;
+        &:hover {
+            opacity: .9;
+        }
+    }
+}
+
+// Query
+
+.twitter-card {
+    width: 220px;
+    margin: 0 auto;
+
+    .avatar {
+        height: 220px;
+        width: 220px;
+        overflow: hidden;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        img {
+            max-width: 220px;
+        }
+    }
+
+    .details {
+        width: 220px;
+        padding: 10px 15px;
+        background: $white;
+
+        ul {
+
+            .username {
+                margin-bottom: 2px;
+
+                input[type="text"] {
+                    @include font-size(1.4);
+                    width: 190px;
+                    font-family: $header-font;
+                    border: none;
+                    outline: 0;
+                    background: transparent;
+                    color: $twitter-blue;
+                    padding: 0 0 10px 0;
+                    border-bottom: 1px solid $grey;
+                }
+            }
+
+            .irl-name {
+                @include font-size(1.1);
+            }
+
+            .location {
+                @include font-size(.9);
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .profile-link {
+        @include font-size(1.2);
+        text-align: center;
+        color: $white;
+        background: $twitter-blue;
+        padding: 10px 0;
+        border-bottom: none;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        &:hover {
+            background: lighten($twitter-blue, 5%);
+        }
+    }
+}
+
+.verdict {
+    @include span-columns(12 omega, 12);
+    text-align: center;
+    color: $white;
+    border-radius: 4px;
+    margin-bottom: 60px;
+
+    .verdict-header {
+        @include font-size(2.2);
+        color: $white;
+        margin-bottom: 5px;
+    }
+
+    .verdict-details {
+        @include font-size(1.2);
+        margin: 0;
+    }
+
+    .suggestion {
+        display: none;
+
+        .twitter-mention-button {
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+    }
+}
+
+.reverse-button {
+    @include retinafy("reverse", "png", 50px, 50px);
+    @include breakpoint(baby-bear) { top: 53.5%; }
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 60%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-bottom: none;
+    border-radius: 50%;
+    &:hover {
+        border-bottom: none;
+        opacity: .8;
+    }
+}
+
+// Verdict states
+
+.true { background: darken($green, 10%); }
+.false { background: #d25251; }
+
+@import "parts/footer";
 
 
 
