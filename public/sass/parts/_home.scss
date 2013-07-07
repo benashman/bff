@@ -1,0 +1,43 @@
+.demo {
+    @include span-columns(12 omega, 12);
+    @include retinafy("demo_url", "png", 630px, 200px);
+    @include breakpoint(baby-bear) { display: none; }
+    background-position: center center;
+    height: 200px;
+}
+
+.intro {
+    @include span-columns(12 omega, 12);
+    text-align: center;
+
+    h2 {
+        @include font-size(2);
+        font-weight: 500;
+        color: $white;
+        margin-bottom: 5px;
+    }
+
+    p {
+        @include font-size(1.1);
+        margin-bottom: 60px;
+        color: #CDCDCD;
+
+        strong {
+            font-style: italic;
+        }
+    }
+
+    .try-button {
+        @include font-size(1.1);
+        display: inline-block;
+        padding: 10px 30px;
+        color: $white;
+        background: $twitter-blue;
+        border-bottom: none;
+        border-radius: 4px;
+        margin-bottom: 60px;
+        &:hover {
+            opacity: .9;
+        }
+    }
+}

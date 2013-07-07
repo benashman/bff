@@ -327,7 +327,7 @@ main {
   display: none;
 }
 
-/* line 83, ../sass/main.scss */
+/* line 1, ../sass/parts/_home.scss */
 .demo {
   width: 100%;
   float: right;
@@ -346,13 +346,13 @@ main {
   }
 }
 @media (max-width: 580px) {
-  /* line 83, ../sass/main.scss */
+  /* line 1, ../sass/parts/_home.scss */
   .demo {
     display: none;
   }
 }
 
-/* line 91, ../sass/main.scss */
+/* line 9, ../sass/parts/_home.scss */
 .intro {
   width: 100%;
   float: right;
@@ -361,7 +361,7 @@ main {
   display: inline;
   text-align: center;
 }
-/* line 95, ../sass/main.scss */
+/* line 13, ../sass/parts/_home.scss */
 .intro h2 {
   font-size: 20px;
   font-size: 2rem;
@@ -369,18 +369,18 @@ main {
   color: white;
   margin-bottom: 5px;
 }
-/* line 102, ../sass/main.scss */
+/* line 20, ../sass/parts/_home.scss */
 .intro p {
   font-size: 11px;
   font-size: 1.1rem;
   margin-bottom: 60px;
   color: #CDCDCD;
 }
-/* line 107, ../sass/main.scss */
+/* line 25, ../sass/parts/_home.scss */
 .intro p strong {
   font-style: italic;
 }
-/* line 112, ../sass/main.scss */
+/* line 30, ../sass/parts/_home.scss */
 .intro .try-button {
   font-size: 11px;
   font-size: 1.1rem;
@@ -392,17 +392,17 @@ main {
   border-radius: 4px;
   margin-bottom: 60px;
 }
-/* line 121, ../sass/main.scss */
+/* line 39, ../sass/parts/_home.scss */
 .intro .try-button:hover {
   opacity: .9;
 }
 
-/* line 129, ../sass/main.scss */
+/* line 1, ../sass/parts/_query.scss */
 .twitter-card {
   width: 220px;
   margin: 0 auto;
 }
-/* line 133, ../sass/main.scss */
+/* line 5, ../sass/parts/_query.scss */
 .twitter-card .avatar {
   height: 220px;
   width: 220px;
@@ -410,21 +410,21 @@ main {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
-/* line 140, ../sass/main.scss */
+/* line 12, ../sass/parts/_query.scss */
 .twitter-card .avatar img {
   max-width: 220px;
 }
-/* line 145, ../sass/main.scss */
+/* line 17, ../sass/parts/_query.scss */
 .twitter-card .details {
   width: 220px;
   padding: 10px 15px;
   background: white;
 }
-/* line 152, ../sass/main.scss */
+/* line 24, ../sass/parts/_query.scss */
 .twitter-card .details ul .username {
   margin-bottom: 2px;
 }
-/* line 155, ../sass/main.scss */
+/* line 27, ../sass/parts/_query.scss */
 .twitter-card .details ul .username input[type="text"] {
   font-size: 14px;
   font-size: 1.4rem;
@@ -437,18 +437,18 @@ main {
   padding: 0 0 10px 0;
   border-bottom: 1px solid #f4f4f4;
 }
-/* line 168, ../sass/main.scss */
+/* line 40, ../sass/parts/_query.scss */
 .twitter-card .details ul .irl-name {
   font-size: 11px;
   font-size: 1.1rem;
 }
-/* line 172, ../sass/main.scss */
+/* line 44, ../sass/parts/_query.scss */
 .twitter-card .details ul .location {
   font-size: 9px;
   font-size: 0.9rem;
   margin-bottom: 5px;
 }
-/* line 179, ../sass/main.scss */
+/* line 51, ../sass/parts/_query.scss */
 .twitter-card .profile-link {
   font-size: 12px;
   font-size: 1.2rem;
@@ -460,12 +460,12 @@ main {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 188, ../sass/main.scss */
+/* line 60, ../sass/parts/_query.scss */
 .twitter-card .profile-link:hover {
   background: #00b8d9;
 }
 
-/* line 194, ../sass/main.scss */
+/* line 66, ../sass/parts/_query.scss */
 .verdict {
   width: 100%;
   float: right;
@@ -477,31 +477,31 @@ main {
   border-radius: 4px;
   margin-bottom: 60px;
 }
-/* line 201, ../sass/main.scss */
+/* line 73, ../sass/parts/_query.scss */
 .verdict .verdict-header {
   font-size: 22px;
   font-size: 2.2rem;
   color: white;
   margin-bottom: 5px;
 }
-/* line 207, ../sass/main.scss */
+/* line 79, ../sass/parts/_query.scss */
 .verdict .verdict-details {
   font-size: 12px;
   font-size: 1.2rem;
   margin: 0;
 }
-/* line 212, ../sass/main.scss */
+/* line 84, ../sass/parts/_query.scss */
 .verdict .suggestion {
   display: none;
 }
-/* line 215, ../sass/main.scss */
+/* line 87, ../sass/parts/_query.scss */
 .verdict .suggestion .twitter-mention-button {
   position: relative;
   top: 5px;
   left: 5px;
 }
 
-/* line 223, ../sass/main.scss */
+/* line 95, ../sass/parts/_query.scss */
 .reverse-button {
   background-image: url("../img/reverse.png");
   position: absolute;
@@ -522,23 +522,23 @@ main {
   }
 }
 @media (max-width: 580px) {
-  /* line 223, ../sass/main.scss */
+  /* line 95, ../sass/parts/_query.scss */
   .reverse-button {
     top: 53.5%;
   }
 }
-/* line 235, ../sass/main.scss */
+/* line 107, ../sass/parts/_query.scss */
 .reverse-button:hover {
   border-bottom: none;
   opacity: .8;
 }
 
-/* line 243, ../sass/main.scss */
+/* line 115, ../sass/parts/_query.scss */
 .true {
   background: #3aa174;
 }
 
-/* line 244, ../sass/main.scss */
+/* line 116, ../sass/parts/_query.scss */
 .false {
   background: #d25251;
 }
